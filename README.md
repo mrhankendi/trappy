@@ -1,3 +1,5 @@
+# Improving the plot visuals 
+
 TRAPpy [![Build Status](https://travis-ci.org/ARM-software/trappy.svg?branch=master)](https://travis-ci.org/ARM-software/trappy) [![Version](https://img.shields.io/pypi/v/trappy.svg)](https://pypi.python.org/pypi/trappy)
 ======
 
