@@ -26,7 +26,8 @@ import re
 import pandas as pd
 import warnings
 
-from resource import getrusage, RUSAGE_SELF
+# Removing Unix-specific calls related to memory usage check 
+# from resource import getrusage, RUSAGE_SELF
 
 from trappy.exception import TrappyParseError
 
@@ -244,8 +245,10 @@ class Base(object):
         # Get a rough idea of how much memory we have to play with
         CHECK_MEM_COUNT = 10000
         kb_free = _get_free_memory_kb()
-        starting_maxrss = getrusage(RUSAGE_SELF).ru_maxrss
-        check_memory_usage = True
+        
+        # Removing Unix-specific calls
+        # starting_maxrss = getrusage(RUSAGE_SELF).ru_maxrss
+        check_memory_usage = False
         check_memory_count = 1
 
         for (comm, pid, cpu, line, data_str) in zip(self.comm_array, self.pid_array,
